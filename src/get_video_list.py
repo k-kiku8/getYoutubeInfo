@@ -16,7 +16,7 @@ load_dotenv()
 # APIキーとチャンネルIDの設定
 API_KEY = os.getenv('API_KEY')
 CHANNEL_ID = os.getenv('CHANNEL_ID')
-MAX_RESULTS = 50
+MAX_RESULTS = 20
 NEXT_PAGE_TOKEN = None
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 

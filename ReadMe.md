@@ -12,12 +12,37 @@
 3. Keyを生成してコピー
 4. .env.sampleをコピーして.envに変更。
 5. key情報や検索項目を.envに指定する。
-6. conda環境を作成 
+6. Anaconda NavigatorからPowershell Promptで立ち上げる
+7. envファイルからconda環境を作成 
     ```shell
     conda env create -f=env.yml
     ```
-7. プロジェクトフォルダに移動して、環境をアクティブにする。
+8. 環境一覧
+   ```shell 
+   conda env list
+   ```
+9. プロジェクトフォルダに移動して、環境をアクティブにする。
     ```shell
     conda activate [環境名]
     ```
-8. 各処理を実行。
+
+## ファイル一覧
+### get_channel_info.py
+チャンネル名を見てチャンネルの詳細情報を取得する。  
+取得した情報にチャンネルIDが含まれているので、その情報を.envに設定する。
+### get_video_list.py
+チャンネルIDを見て、動画の一覧を取得してJSONに吐き出す。
+クロールするので攻撃とみなされないようにアクセスに間をあける。
+
+### get_video_info.py
+記憶にない。使ってない？
+
+### generate_urls.py
+動画情報のJSONからURL一覧のテキストを吐き出す。
+これを動画ダウンロードソフトに入れることでダウンロードできる。
+
+### .env.sample
+必要な固定値の例を入れておく。
+ここから.envを作成して実際の値を入れる。.envはgitignore
+### videos
+動画情報の一覧とURL一覧のファイルが吐き出される場所。
